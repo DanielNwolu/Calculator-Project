@@ -1,0 +1,119 @@
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #edf1f4;
+}
+.calculator {
+  position: relative;
+  width: 340px;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.1), -15px -15px 20px #fffb;
+}
+
+.calculator .btns {
+  position: relative;
+  display: grid;
+}
+
+.calculator .btns #display {
+  position: relative;
+  grid-column: span 4;
+  user-select: none;
+  overflow: none;
+  width: 100%;
+  text-align: end;
+  padding: 0 10px;
+  color: #5166d6;
+  height: 40px;
+  line-height: 100px;
+  font-size: 25px;
+  box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.1), inset -5px -5px 20px #ffff;
+  border-radius: 5px;
+  font-weight: 500;
+  border: none;
+  outline: none;
+}
+.calculator .btns #display.dimmed {
+  opacity: 0.5; /* Adjust the opacity as per your preference */
+}
+
+.btns.hide-buttons button {
+  animation: zoomOut 0.5s forwards;
+}
+
+@keyframes zoomOut {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+.btn {
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.btn.hidden {
+  opacity: 0;
+  transform: scale(0.8) rotateY(90deg);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.btn:active {
+  animation: buttonClickAnimation 0.2s ease;
+}
+
+@keyframes buttonClickAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.calculator .btns button {
+  position: relative;
+  padding: 10px;
+  box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.1), inset -5px -5px 20px #ffff;
+  margin: 10px;
+  border-radius: 3px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  user-select: none;
+  min-width: 40px;
+  font-size: 20px;
+  color: #666;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1), 
+  -5px -5px 10px #ffff;
+  text-align: center;
+}
+
+.calculator .btns button:active {
+    box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.1), 
+    inset -5px -5px 20px #ffff;
+    color: #f44336;
+}
+
+.calculator .btns #clear, .calculator .btns #off {
+    background-color: #f44336;
+    color: white;
+}
+.calculator .btns #equal {
+  background-color: #31a935;
+  color:white ;
+}
